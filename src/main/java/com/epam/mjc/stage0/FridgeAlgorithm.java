@@ -14,6 +14,5 @@ public class FridgeAlgorithm {
         fridge.open();
         fridge.getMilk();
         fridge.close();
-        return;
     }
 }

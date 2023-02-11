@@ -141,8 +141,42 @@ public class ArrayTasks {
      * arr = [[5, 4], [7]]       -> [[7], [4, 5]]
      */
     public int[][] sortRaggedArray(int[][] arr) {
-        return arr;
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j + 1].length < arr[j].length) {
+                    int[] swap = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = swap;
+                }
+            }
 
+        }
+        for (int i = 0; i < arr.length; i++){
+            for (int j = 0; j < arr[i].length-1; j++){
+                for (int k = 0; k < arr[i].length-1-i; k++){
+                    if (arr[i][k+1]<arr[i][k]){
+                        int swap = arr[i][k];
+                        arr[i][k] = arr[i][k+1];
+                        arr [i][k+1] = swap;
+                    }
+                }
+
+            }
+
+        }
+        return arr;
 
     }
 }
+
+
+
+
+ //public static void main (String[]args){
+        //int[][] unsorted = {{1,2,3},{1,2},{5,4,6,7},{1,5,4}, {7,8,9}};
+        //int[][] sorted = sortRaggedArray(unsorted);
+
+
+
+
+
